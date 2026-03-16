@@ -93,6 +93,7 @@ while (response.tool_calls && response.tool_calls.length > 0) {
 
   // 再次调用模型，传入工具结果
   response = await modelWithTools.invoke(messages);
+  messages.push(response);
 }
 
 console.log("\n[最终回复]");
