@@ -98,3 +98,21 @@ while (response.tool_calls && response.tool_calls.length > 0) {
 
 console.log("\n[最终回复]");
 console.log(response.content);
+
+/*
+这节我们入门了 langchain，调用了大模型，并且实现了第一个 tool
+
+我们用的千问的模型，因为它有免费额度，获取 api key 后，用 .env 管理。
+
+.env 这个文件不提交 git，都是聊完软件发送的方式口口相传，就和数据库密码一样。
+
+我们用 tool 创建了一个工具，写一下函数，以及加下名字、描述、参数的格式（用 zod 声明）就可以了。
+
+用 model.bindTools 传给模型，在 system message 告诉它这个工具的信息，以及规范下它的回答流程。
+
+message 分为 SystemMessage、HumanMessage、AIMesasge、ToolMessage 四种
+
+之后，直接问模型某某代价的的信息，它就知道工具去读取文件，然后来解释了。
+
+实现了第一个 tool 之后，你可不可以 F cursor 怎么实录，后面我们实现一个简单版 cursor!
+*/
